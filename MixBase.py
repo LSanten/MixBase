@@ -1,5 +1,10 @@
 """
 Leon Santen
+
+IMPORTANT:
+There are two different files: MixBase.py and run.py
+- MixBase.py is for development purposes and creates the database transition_database.db which contains fake information
+- run.py is for usage purposes anc creates the database run.db which contains real valuable data
 """
 
 import sqlite3
