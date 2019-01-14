@@ -5,6 +5,9 @@ IMPORTANT:
 There are two different files: MixBase.py and run.py
 - MixBase.py is for development purposes and creates the database transition_database.db which contains fake information
 - run.py is for usage purposes anc creates the database run.db which contains real valuable data
+
+When exchanging run.py with newly developed code make sure to change the name of the database to 'run.db' !!!
+Table name within databse stays the same!
 """
 
 import sqlite3
@@ -19,7 +22,8 @@ class DatabaseManagement():
     def connect_to_database_and_cursor(self):
         """Connect to database and creates new database if not existent"""
         global conn
-        conn = sqlite3.connect('run.db') #is being created automatically if doesn't exist - otherwise uses existing one
+        conn = sqlite3.connect('run.db') #!!! CHANGE TO run.db IF USAGE FILE AND TO 'transition_database.db' IF DEVELOPMENT FILE !!! -- !!! -- !!!
+        #is being created automatically if doesn't exist - otherwise uses existing one
         #TODO change database name to variable based on function input
         global c
         c = conn.cursor()
