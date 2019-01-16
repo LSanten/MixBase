@@ -83,7 +83,7 @@ class Menu():
         self.state = 'menu'
 
     def ask_for_action(self):
-        print("\nWhat do you want to do? Type\n\n --> add \t- to add a new transition\n --> search \t- to search for a transition with the trackname\n --> quit \t- to close the program\n")
+        print("\nWhat do you want to do? Type\n\n --> [a]dd \t- to add a new transition\n --> [s]earch \t- to search for a transition with the trackname\n --> [q]uit \t- to close the program\n")
         self.state = input(' --> ')
 
     def execute_action(self):
@@ -92,19 +92,19 @@ class Menu():
         if self.state == 'menu':
             self.ask_for_action()
 
-        elif self.state == 'add':
+        elif self.state == 'add' or 'a':
             input_transition = InputTransition() #instantiate InputTransition-class again every loop
             input_transition.input_request() #request information about songs and save as attributes of class object
             input_transition.data_entry() #saves transition data in table
 
             self.state = 'menu' #starts with menu state again
 
-        elif self.state == 'search':
+        elif self.state == 'search' or 's':
             print('\n\nThis does not work currently!')
             self.state = 'menu'
             sleep(2)
 
-        elif self.state == 'quit':
+        elif self.state == 'quit' or 'q':
             pass
 
         else:
