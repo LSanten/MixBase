@@ -4,10 +4,10 @@ Leon Santen
 IMPORTANT:
 There are two different files: MixBase.py and run.py
 - MixBase.py is for development purposes and creates the database transition_database.db which contains fake information
-- run.py is for usage purposes anc creates the database run.db which contains real valuable data
+- run.py is for usage purposes and creates the database run.db which contains real valuable data
 
 When exchanging run.py with newly developed code make sure to change the name of the database to 'run.db' !!!
-Table name within databse stays the same!
+Table name within database stays the same!
 """
 
 import sqlite3
@@ -120,7 +120,7 @@ def Main():
 
     while True:
         menu.execute_action()
-        if menu.state == 'quit':
+        if menu.state == 'quit' or 'q':
             break
 
     database.close_connection()
