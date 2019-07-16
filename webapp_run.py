@@ -7,8 +7,7 @@ Please set the debug_mode to 0 for "off" and 1 for "on".
 To STOP server: hit ctrl+c terminal.
 """
 
-from flask import Flask
-from flask import render_template # to render HTML
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 @app.route('/') #'/' tells us that it's the index of a page | access via  http://127.0.0.1:5000/
