@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+  {% if title %}
+    <title>MixBase - {{ title }}</title>
+  {% else %}
+    <title>No title given</title>
+  {% endif %}
+
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>
