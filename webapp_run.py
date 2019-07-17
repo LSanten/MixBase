@@ -27,4 +27,4 @@ def helloTemplate(name=None):
 
 if __name__ == '__main__':
     app.run(debug=True)
-    webbrowser.open_new_tab("http://127.0.0.1:5000/")
+    webbrowser.open_new("http://127.0.0.1:5000/")
