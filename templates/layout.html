@@ -28,13 +28,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="/">Home</a>
-              <a class="nav-item nav-link" href="/hello/Debug">Debug</a>
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="hello/debug">Debug</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="/login">Login</a>
-              <a class="nav-item nav-link" href="/register">Register</a>
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <h3>What is MixBase?</h3>
               <p class='text-muted'>MixBase is a handy DJ-transition manager that saves your transitions in a database and makes them easily accessible to you and your friends. <br><br>Feel free to check out the code on GitHub.
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-light"><a href="https://github.com/LSanten/MixBase">GitHub Repository</a></li>
+                  <li class="list-group-item list-group-item-light"><a href="https://github.com/LSanten/MixBase" >GitHub Repository</a></li>
                   <li class="list-group-item list-group-item-light">Announcements</li>
                   <li class="list-group-item list-group-item-light">Calendars</li>
                   <li class="list-group-item list-group-item-light">etc</li>
