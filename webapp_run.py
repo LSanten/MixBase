@@ -8,10 +8,27 @@ To STOP server: hit ctrl+c terminal.
 """
 
 from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegistrationForm, LoginForm
-app = Flask(__name__)
+from datetime import datetime
 
+app = Flask(__name__)
 app.config['SECRET_KEY'] = '6fd5dd298e9002621b7e3c76bbf86372' #to get a random key: >>> python, >>> import secrets, >>> secrets.token_hex(16)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///webmix.db'
+db = SQLAlchemy(app) # create database instance
+
+class Pair(db.Model): #data table for transition pair
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String(30), nullable=False)
+    secondname = db.Column(db.String(30), nullable=False)
+    firstartist = db.Column(db.String(30), nullable=False)
+    secondtartist = db.Column(db.String(30), nullable=False)
+    comment = db.Column(db.Text)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"Pair('{self.firstname}', '{self.secondname}', '{self.date_posted}' )"
+
 
 
 @app.route('/') #'/' tells us that it's the index of a page | access via  http://127.0.0.1:5000/
