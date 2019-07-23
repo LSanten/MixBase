@@ -14,7 +14,7 @@ class User(db.Model):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     pair_posts = db.relationship('Pair', backref='author', lazy=True) #this is a releationship not a column -- backreference to Pair. You can find out author of a pair post by using pair.author #lazy=True --> sqlalchemy will load data directly when used
-
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     def __repr__(self):
         return f"User('{self.username}', '{self.id}')"
 
