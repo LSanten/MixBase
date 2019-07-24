@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from webapp.models import User
 
@@ -37,3 +37,16 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
 
     submit = SubmitField('Sign Up')
+
+class PairForm(FlaskForm): #Form for saving transition in database
+    firstname = StringField('Name A', validators=[DataRequired()])
+
+    firstartist = StringField('Artist A', validators=[DataRequired()])
+
+    secondname = StringField('Name B', validators=[DataRequired()])
+
+    secondartist = StringField('Artist B', validators=[DataRequired()])
+
+    comment = TextAreaField('Any comments?')
+
+    submit = SubmitField('Enter Transition')

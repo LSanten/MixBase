@@ -1,7 +1,7 @@
 """
 Leon Santen
 
-This is a package for database in webapp_run.py
+These are the methods of the webmix database as a part of the package in webapp_run.py
 """
 from datetime import datetime
 from webapp import db, login_manager
@@ -31,7 +31,7 @@ class Pair(db.Model): #data table for transition pair
     secondartist = db.Column(db.String(30), nullable=False)
     comment = db.Column(db.Text)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), default=1) ## TODO: change nullable back to False when login works
 
     def __repr__(self):
         return f"Pair('{self.firstname}', '{self.secondname}', '{self.date_posted}' )"
