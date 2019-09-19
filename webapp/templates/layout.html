@@ -28,8 +28,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('transitions') }}"><b>Transitions</b></a>
+              <a class="nav-item nav-link" href="{{ url_for('home') }}"><b>Save New Pair</b></a>
+              <a class="nav-item nav-link" href="{{ url_for('transitions') }}">Database</a>
               <a class="nav-item nav-link" href="hello/debug">Debug</a>
             </div>
             <!-- Navbar Right Side -->
@@ -57,6 +57,12 @@
           </div>
           <div class="col-md-4">
             <div class="content-section">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a href="{{ url_for('home') }}" >Save New Pair</a></li>
+                <li class="list-group-item list-group-item-light"><a href="#" >Save New Song (NOT Transition)</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{{ url_for('transitions') }}" >Transition-Database</a></li>
+              </ul>
+              <hr>
               <h3>What is <b>Mix</b>Base?</h3>
               <p class='text-muted'>MixBase is a handy DJ-transition manager that saves your transitions in a database and makes them easily accessible to you and your friends.
               <br><br>Feel free to check out the code on GitHub.<br><br>

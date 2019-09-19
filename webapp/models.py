@@ -27,11 +27,13 @@ class Pair(db.Model): #data table for transition pair
     id = db.Column(db.Integer, primary_key=True)
     firstname = db.Column(db.String(30), nullable=False)
     secondname = db.Column(db.String(30), nullable=False)
-    firstartist = db.Column(db.String(30), nullable=False)
-    secondartist = db.Column(db.String(30), nullable=False)
+    firstartist = db.Column(db.String(30), nullable=True)
+    secondartist = db.Column(db.String(30), nullable=True)
     comment = db.Column(db.Text)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), default=1) ## TODO: change nullable back to False when login works
+    # genre switch #TODO: drop down menu --> genre to genres
+    # tags #TODO: type of transition
 
     def __repr__(self):
         return f"Pair('{self.firstname}', '{self.secondname}', '{self.date_posted}' )"
