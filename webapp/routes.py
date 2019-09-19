@@ -45,6 +45,11 @@ def login():
             flash('Login unsuccessful. Please check email and password', 'danger') #danger makes return red #TODO: get success and danger colored frames working
     return render_template('login.html', title='Login', form=form)
 
+@app.route('/transitions', methods=['GET', 'POST'])
+def transitions():
+    pairs = Pair.query.all()
+    return render_template('transitions.html', title='Transitions Database', pairs=pairs)
+
 #DEBUG Routes
 @app.route('/hello') # access via  http://127.0.0.1:5000/hello/anything
 def hellos():
