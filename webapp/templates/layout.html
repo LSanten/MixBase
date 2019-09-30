@@ -29,6 +29,7 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('home') }}"><b>Save New Pair</b></a>
+              <a class="nav-item nav-link" href="{{ url_for('singlesong') }}"><b>Save Single Song</b></a>
               <a class="nav-item nav-link" href="{{ url_for('transitions') }}">Database</a>
               <a class="nav-item nav-link" href="hello/debug">Debug</a>
             </div>
@@ -59,7 +60,7 @@
             <div class="content-section">
               <ul class="list-group">
                 <li class="list-group-item list-group-item-light"><a href="{{ url_for('home') }}" >Save New Pair</a></li>
-                <li class="list-group-item list-group-item-light"><a href="#" >Save New Song (NOT Transition)</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{{ url_for('singlesong')}}" >Save New Song (NOT Transition)</a></li>
                 <li class="list-group-item list-group-item-light"><a href="{{ url_for('transitions') }}" >Transition-Database</a></li>
               </ul>
               <hr>

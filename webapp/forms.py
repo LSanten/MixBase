@@ -43,9 +43,11 @@ class PairForm(FlaskForm): #Form for saving transition in database
 
     firstartist = StringField('Artist A', validators=[DataRequired()])
 
-    secondname = StringField('Name B', validators=[DataRequired()])
+    #secondname = StringField('Name B', validators=[DataRequired()])
+    secondname = StringField('Name B') #this is changed to allow single song inputs
 
-    secondartist = StringField('Artist B', validators=[DataRequired()])
+    #secondartist = StringField('Artist B', validators=[DataRequired()])
+    secondartist = StringField('Artist B')
 
     comment = TextAreaField('Any comments?')
 
